@@ -13,7 +13,7 @@ class Login extends Controller{
         if (!empty($_SESSION['status'])){
 
             if($_SESSION['status'] == 1){
-                header('location: '. BASEURL . '/multiuser/admin');
+                header('location: '. BASEURL . '/adminPage/index');
 
             }else if($_SESSION['status'] == 2){
                 header('location: '. BASEURL . '/multiuser/user');

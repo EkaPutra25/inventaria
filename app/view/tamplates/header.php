@@ -25,7 +25,7 @@
                             <div class="menu-design d-flex flex-column">
                                 <div class="dasboard-design">
                                     <hr class="line-fill">
-                                    <a href="<?= BASEURL ?>/dashboard" class="dasboard <?= $data['activeItem'] ?>">
+                                    <a href="<?= BASEURL ?>/adminPage/index" class="dasboard <?= $data['activeItem'] ?>">
                                         <i class="fa-solid fa-gauge"></i>
                                         Dashboard
                                     </a>

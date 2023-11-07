@@ -32,22 +32,23 @@ class Barang_model {
     }
 
     public function tambahDataBarang($dataBarang)
-    {
-        $query = "INSERT INTO barang 
-                    VALUES (
-                        '', :namaBarang, :keterangan, :stok, :id_rak, :gambar, :kolom
-                        )";
-        $this->db->query($query);
-        $this->db->bind('namaBarang', $dataBarang['namaBarang']);
-        $this->db->bind('keterangan', $dataBarang['keterangan']);
-        $this->db->bind('stok', $dataBarang['stok']);
-        $this->db->bind('id_rak', $dataBarang['idRak']);
-        $this->db->bind('gambar', $dataBarang['gambarBarang']);
-        $this->db->bind('kolom', $dataBarang['jumlahKolom']);
+{
+    $query = "INSERT INTO " . $this->tabel . " (nama_barang, keterangan, stok, id_rak, gambar, kolom)
+                VALUES (
+                     :namaBarang, :keterangan, :stok, :idRak, :gambarBarang, :jumlahKolom
+                    )";
+    $this->db->query($query);
+    $this->db->bind('namaBarang', $dataBarang['namaBarang']);
+    $this->db->bind('keterangan', $dataBarang['keterangan']);
+    $this->db->bind('stok', $dataBarang['stok']);
+    $this->db->bind('idRak', $dataBarang['idRak']);
+    $this->db->bind('gambarBarang', $dataBarang['gambarBarang']);
+    // $this->db->bind('jumlahKolom', $dataBarang['jumlahKolom']);
 
-        $this->db->execute();
-        return $this->db->rowCount();
-    }
+    $this->db->execute();
+    return $this->db->rowCount();
+}
+
 
     public function deleteDataBarang($id)
     {
