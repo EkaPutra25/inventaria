@@ -16,7 +16,7 @@ class Login extends Controller{
                 header('location: '. BASEURL . '/adminPage/index');
 
             }else if($_SESSION['status'] == 2){
-                header('location: '. BASEURL . '/multiuser/user');
+                header('location: '. BASEURL . '/userPage/indexUser');
             }
         } 
             // else {

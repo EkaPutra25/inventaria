@@ -22,10 +22,14 @@
                     </div>
                     <!-- End Navbar Design -->
 
-
                     <!-- Item Card Design -->
                     <div class="item-barang ">
 
+                      <div class="row flashMessage">
+                        <div class="col-lg-6">
+                          <?= Flasher::flash(); ?>
+                        </div>
+                      </div>
                         <div class="row row-cols-1 row-cols-md-3 g-4">
                             <?php foreach ( $data['barang'] as $rowBarang ) : ?>
                                 <div class="col p-4">
@@ -42,7 +46,7 @@
                                         <div class="card-footer">
                                             <div class="float-start">
                                                 <div class="tombol">
-                                                <a href="<?= BASEURL ?>/multiuser/editbarang" data-id ="<?= $rowBarang['id_barang'] ?>" class="btn btn-warning justify-content-center editDataBarang"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></a>
+                                                <a href="<?= BASEURL ?>/multiuser/editbarang/<?= $rowBarang['id_barang'] ?>" data-id ="<?= $rowBarang['id_barang'] ?>" class="btn btn-warning justify-content-center editDataBarang"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></a>
                                                 <a href="<?= BASEURL ?>/multiuser/deleteBarang/<?= $rowBarang['id_barang'] ?>"  onclick="return confirm('Yakin Barang Ingin Dihapus?')" class="btn btn-danger"><i class="fa-solid fa-trash-can" style="color: #ffffff;"></i></a>
                                                 </div>
                                             </div>
@@ -171,7 +175,7 @@
                           <div class="mb-3 row">
                               <label for="inputKolom" class="col-sm-4 col-form-label">Kolom :</label>
                               <div class="col-sm-7">
-                              <select class="form-select mb-3" aria-label="Default select example">
+                              <select class="form-select mb-3" aria-label="Default select example" name="jumlahKolom">
                                     <option selected>1</option>
                                     <option value="1">2</option>
                                     <option value="2">3</option>
